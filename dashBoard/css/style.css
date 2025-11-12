@@ -92,6 +92,7 @@ select.slective-input{
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 20px;
 }
 .slective-input option{
     font-size: 20px;
@@ -99,9 +100,6 @@ select.slective-input{
 .list{
     margin-top: 20px;
 }
-
-
-
 
 
 .container{
