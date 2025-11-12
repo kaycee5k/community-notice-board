@@ -1,168 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Community Notice Board</title>
-    <!---->
-    <link rel="stylesheet" href="styles.css"> />
-</head>
-<body>
-    <!--  HEADER / NAVIGATION -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">Community Notice Board</div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-               
-                <li><a
-            href="#categories">Categories</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#create.html"
-                class="btn-primary">Create Post</a></li>
-            </ul>
-            <button class="btn-primary">Sign In</button>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">Community Notice Board</div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#create.html" class="btn-primary">Create Post</a></li>
+        </ul>
+        <button class="btn-primary">Get Started</button>
+      </nav>
     </header>
-        
 
     <!--  HERO SECTION -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to the Community Notice Board. Connect. Help. Grow Together</h1>
-            <p> Share, help, offer support, and stay connected.</p>
-            <a href="#create.html" 
-            class="btn-primary">Get Started</a>
-        </div>
+      <div class="hero-content">
+        <h1>
+          Welcome to the Community Notice Board. Connect. Help. Grow Together
+        </h1>
+        <p>Share, help, offer support, and stay connected.</p>
+        <a href="#" class="btn-primary">Get Started</a>
+      </div>
     </section>
 
     <!-- CATEGORY SECTION-->
-     <section id="categories"
-     class="features">
-          <h2>Categories</h2>
-          <div class="feature-container">
-            <div class="feature-card">
-                <img src="images/food.png"
-        alt="Food">
-                <h3>Food</h3>
-                <p>Request or offer food items to support those in need</p>
-                </div>
-            </div class="feature-card">
-            <img src="images/shelter.png"
-        alt="Clothing">
-                <h3>Clothing</h3>
-                <p>Donate or request clothing for individuals or families.</p>
-          </div>
-        </div class="feature-card">
-            <img src="images/medical.png"
-        alt="Medical">
-                <h3>Medical</h3>
-                <p>Seek or provide medical assistance and supplies.</p>
-          </div>
-        </div class="feature-card">
-            <img src="images/education.png"
-        alt="Education">
-                <h3>Education</h3>
-                <p> Find or help with educational resources and support.</p>
-                <div>    
-                </div> class="feature-card">
-            <img src="images/financial.png"
-        alt="Financial">
-                <h3>Financial</h3>
-                <p>Offer or request financial aid for various needs.</p>
-          </div>
-        </div class="feature-card">
-            <img src="images/other.png"
-        alt="Other">
-                <h3>Other</h3>
-                <p>Post or ask for support in other ways</p>
-            </div>
+    <section id="categories" class="features">
+      <h2>Categories</h2>
+      <div class="feature-container">
+        <div class="feature-card">
+          <img src="images/food.png" alt="Food" />
+          <h3>Food</h3>
+          <p>Request or offer food items to support those in need</p>
         </div>
+        <div class="feature-card">
+          <img src="images/shelter.png" alt="Clothing" />
+          <h3>Clothing</h3>
+          <p>Donate or request clothing for individuals or families.</p>
+        </div>
+        <div class="feature-card">
+          <img src="images/medical.png" alt="Medical" />
+          <h3>Medical</h3>
+          <p>Seek or provide medical assistance and supplies.</p>
+        </div>
+        <div class="feature-card">
+          <img src="images/education.png" alt="Education" />
+          <h3>Education</h3>
+          <p>Find or help with educational resources and support.</p>
+          <div></div>
+          class="feature-card">
+          <img src="images/financial.png" alt="Financial" />
+          <h3>Financial</h3>
+          <p>Offer or request financial aid for various needs.</p>
+        </div>
+        <div class="feature-card">
+          <img src="images/other.png" alt="Other" />
+          <h3>Other</h3>
+          <p>Post or ask for support in other ways</p>
+        </div>
+      </div>
     </section>
 
     <!--  SEARCH + FILTER AREA-->
     <section class="search-filter">
-        <input type="text" placeholder="Search posts..." class="search-bar">
-        <select class="filter-dropdown">
-            <option value="">All Categories</option>
-            <option value="food">Food</option>
-            <option value="shelter">Shelter</option>
-            <option value="clothing">Clothing</option>
-            <option value="medical">Medical</option>
-            <option value="education">Education</option>
-            <opition value="financial">Financial</option>
-            <option value="other">Other</option>
-        </select>
-        <button type ="submit">Search</button>
-    </class>
+      <input type="text" placeholder="Search posts..." class="search-bar" />
+      <select class="filter-dropdown">
+        <option value="">All Categories</option>
+        <option value="food">Food</option>
+        <option value="shelter">Shelter</option>
+        <option value="clothing">Clothing</option>
+        <option value="medical">Medical</option>
+        <option value="education">Education</option>
+        <option value="financial">Financial</option>
+        <option value="other">Other</option>
+      </select>
+      <button type="submit">Search</button>
     </section>
 
     <!-- POST PREVIEW / FEED-->
-     <main id="post Feed"
-     class="post-section">
-    <h2>Latest Community Posts</h2>
-    <div class="post-grid">
+    <main id="post Feed" class="post-section">
+      <h2>Latest Community Posts</h2>
+      <div class="post-grid">
         <!-- Example post cards (to be filled dynamically with JS)-->
-         <article class="post card">
-            <h3> Request: Help Needed for School Supplies</h3>
-            <p>Single mother in Ikorodu is seeking help with basic school materials for her kids.</p>
-            <p><strong>Category:</strong>Education</p>
-            <p><small>Posted: Nov 10, 2025</small></p>
-         <article>
+        <article class="post card">
+          <h3>Request: Help Needed for School Supplies</h3>
+          <p>
+            Single mother in Ikorodu is seeking help with basic school materials
+            for her kids.
+          </p>
+          <p><strong>Category:</strong>Education</p>
+          <p><small>Posted: Nov 10, 2025</small></p>
+        </article>
 
-         </article class="post-card"> Offer: Free Weekend Health Check</h3>
-         <p>Local nurse is offering free blood presure and sugar level tests this Saturday at 4pm.</p>
-                                  <p><strong>Category :</strong> Health</p>
-                                  <p>small>Posted: Nov 9, 2025</small></p>
-         </article>
-        </div>
-     </main>
+        <article class="post-card">
+          Offer: Free Weekend Health Check
+          <p>
+            Local nurse is offering free blood presure and sugar level tests
+            this Saturday at 4pm.
+          </p>
+          <p><strong>Category :</strong> Health</p>
+          <p><small>Posted: Nov 9, 2025</small></p>
+        </article>
+      </div>
+    </main>
 
-     <!-- ABOUT SECTION-->
-      <section id="about" class="about">
-        <h2>About the Project</h2>
-        <p>
-            The Community Notice Board is digital platfom for neighbours to share offers and requests for support and help.
-            Neighbours who have needs like finances, shelter, medical conditions, feeding challenges and several others are 
-            encouraged to post their needs on the platform and those who also have offers to help in any way are also encouraged 
-            to do like wise. Through this patform, we support and bear each others burden.
-        </p>
-    </p>
-    our goal is to make it easier for community members to connect, share resources, and support one another 
-    in times of need.
-</P> 
-</section>
+    <!-- ABOUT SECTION-->
+    <section id="about" class="about">
+      <h2>About the Project</h2>
+      <p>
+        The Community Notice Board is digital platfom for neighbours to share
+        offers and requests for support and help. Neighbours who have needs like
+        finances, shelter, medical conditions, feeding challenges and several
+        others are encouraged to post their needs on the platform and those who
+        also have offers to help in any way are also encouraged to do like wise.
+        Through this platform, we support and bear each others burden.
+      </p>
+      <p>
+        our goal is to make it easier for community members to connect, share
+        resources, and support one another in times of need.
+      </p>
+    </section>
 
-      <!--A CALL TO ACTION-->
-      <section class="cta">
-        <h2>Ready to Make a Difference?</h2>
-        <a href="create.html"
-        class="btn-primary">Post a REquest or Offer</a>
-      </section>
+    <!--A CALL TO ACTION-->
+    <section class="cta">
+      <h2>Ready to Make a Difference?</h2>
+      <a href="create.html" class="btn-primary">Post a REquest or Offer</a>
+    </section>
 
-      <!-- FOOTER -->
-       <footer>
-        <p>&copy; 2025 Community Notice Board| Built by Group 3</p>
-        </footer>
-
-        </body>
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 Community Notice Board| Built by Group 3</p>
+    </footer>
+  </body>
 </html>
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-                
-
-
-
-
