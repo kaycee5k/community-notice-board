@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Notice Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <h2>Community Dashboard</h2>
+      </div>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search requests..." />
+        <button id="requestBtn">Request Help</button>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="stat-card">
+        <h3>Active Requests</h3>
+        <p id="activeCount">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Closed Requests</h3>
+        <p id="closedCount">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Help Rendered</h3>
+        <p id="helpCount">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Active Community</h3>
+        <p id="communityCount">0</p>
+      </div>
+    </section>
+
+    <section class="categories">
+      <button class="tab active" data-category="all">All</button>
+      <button class="tab" data-category="home">Home & Errands</button>
+      <button class="tab" data-category="care">Care & Support</button>
+      <button class="tab" data-category="learning">Learning & Tech</button>
+      <button class="tab" data-category="community">
+        Community & Services
+      </button>
+    </section>
+
+    <section class="card-container" id="postContainer"></section>
+
+    <!-- Modal for creating posts -->
+    <div class="modal" id="postModal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Request Help</h2>
+        <form id="postForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <select id="category" required>
+            <option value="">Select Category</option>
+            <option value="home">Home & Errands</option>
+            <option value="care">Care & Support</option>
+            <option value="learning">Learning & Tech</option>
+            <option value="community">Community & Services</option>
+          </select>
+          <textarea
+            id="description"
+            placeholder="Describe your request..."
+            required
+          ></textarea>
+          <input
+            type="text"
+            id="contact"
+            placeholder="Your Contact Info"
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
