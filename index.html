@@ -16,7 +16,7 @@
 
           <li><a href="#categories">Categories</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#create.html" class="btn-primary">Create Post</a></li>
+          <li><a href="create.html" class="btn-primary">Create Post</a></li>
         </ul>
         <button  class="btn-primary"><a href="dashboard/index.html"> Get Started</a></button>
       </nav>
@@ -28,9 +28,9 @@
         <h1>
           Welcome to the Community Help Board. <br>Connect. Help. Grow Together
         </h1>
-        <p>Share, help, offer support, and stay connected.</p>
-        <a href="dashboard/index.html" class="btn-primary">Get Started</a>
-      </div>
+        <p>Share, help, offer support and stay connected.</p>
+        <a href="dashboard/index.html" class="btn-primary nav-btn">Get Started</a>
+    </div>
     </section>
 
     <!-- CATEGORY SECTION-->
@@ -38,36 +38,25 @@
       <h2>Categories</h2>
       <div class="feature-container">
         <div class="feature-card">
-          <img src="/css/photos/food.jpg" alt="Food" />
-          <h3>Food</h3>
-          <p>Request or offer food items to support those in need</p>
+          <img src="/css/photos/home and errands.jpg" alt="Home and Errands" />
+          <h3>Home and Errands</h3>
+          <p>Request for or offer help with cleaning, cooking, errands, and home tasks.</p>
         </div>
         <div class="feature-card">
-          <img src="/css/photos/clothes.png" alt="Clothing" />
-          <h3>Clothing</h3>
-          <p>Donate or request clothing for individuals or families.</p>
+          <img src="/css/photos/care and support.png" alt="Care and Support" />
+          <h3>Care and Support</h3>
+          <p>Emotional support, health checks, caregiving help.</p>
         </div>
         <div class="feature-card">
-          <img src="/css/photos/medicals.png" alt="Medical" />
-          <h3>Medical</h3>
-          <p>Seek or provide medical assistance and supplies.</p>
+          <img src="/css/photos/learning and tech.png" alt="Learning and Tech" />
+          <h3>Learning and Tech</h3>
+          <p>Request tech help, tutoring, learning support or offer to tutor.</p>
         </div>
         <div class="feature-card">
-          <img src="/css/photos/education.png" alt="Education" />
-          <h3>Education</h3>
-          <p>Find or help with educational resources and support.</p>
+          <img src="/css/photos/community services.png" alt="Community Services" />
+          <h3>Community Services</h3>
+          <p>Volunteering, neighborhood events, community projects.</p>
           </div>
-          <div class="feature-card">
-          <img src="/css/photos/finance.png" alt="Financial" />
-          <h3>Financial</h3>
-          <p>Offer or request financial aid for various needs.</p>
-        </div>
-        <div class="feature-card">
-          <img src="css/photos/others.png" alt="Other" />
-          <h3>Other</h3>
-          <p>Post or ask for support in other ways</p>
-        </div>
-      </div>
     </section>
 
     <!--  SEARCH + FILTER AREA-->
@@ -78,34 +67,33 @@
         <option value="home and errands">Home and Errands</option>
         <option value="care and support">Care and Support</option>
         <option value="learning and tech">Learning and Tech</option>
-        <option value="Community and Services">Community and Services</option>
-        <option value="others">Others</option>
+        <option value="Community Services">Community Services</option>
       </select>
       <button type="submit">Search</button>
     </section>
 
     <!-- POST PREVIEW / FEED-->
-    <main id="post Feed" class="post-section">
-      <h2>Latest Community Posts</h2>
+    <main id="post-feed" class="post-section">
+        <h2>Latest Community Posts</h2>
       <div class="post-grid">
         <!-- Example post cards (to be filled dynamically with JS)-->
         <article class="post card">
           <h3>Request: Help Needed for School Supplies</h3>
           <p>
-            Single mother in Ikorodu is seeking help with basic school materials
+            Single mother in the community is seeking help with basic school materials
             for her kids.
           </p>
-          <p><strong>Category:</strong>Education</p>
+          <p><strong>Category:</strong>Learning and Tech</p>
           <p><small>Posted: Nov 10, 2025</small></p>
         </article>
 
         <article class="post-card">
-          Offer: Free Weekend Health Check
+          Offer: Free Weekend Health Check</h3>
           <p>
-            Local nurse is offering free blood presure and sugar level tests
+            Local nurse is offering free blood pressure and sugar level tests
             this Saturday at 4pm.
           </p>
-          <p><strong>Category :</strong> Health</p>
+          <p><strong>Category :</strong> Care and Support</p>
           <p><small>Posted: Nov 9, 2025</small></p>
         </article>
       </div>
@@ -115,11 +103,12 @@
     <section id="about" class="about">
       <h2>About the Project</h2>
       <p>
-        The Community Notice Board is digital platfom for neighbours to share
+        The Community Notice Board is digital platform for neighbours to share
         offers and requests for support and help. Neighbours who have needs like
-        finances, shelter, medical conditions, feeding challenges and several
+        financial, shelter, medical conditions, feeding challenges and several
         others are encouraged to post their needs on the platform and those who
-        also have offers to help in any way are also encouraged to do like wise.
+        also have offers to help in any way are also encouraged to do likewise.
+        
         Through this platform, we support and bear each others burden.
       </p>
       <p>
@@ -131,8 +120,22 @@
     <!--A CALL TO ACTION-->
     <section class="cta">
       <h2>Ready to Make a Difference?</h2>
-      <a href="create.html" class="btn-primary">Post a REquest or Offer</a>
+      <a href="create.html" class="btn-primary">Post a Request or Offer</a>
     </section>
+
+    <!-- CONTACT SECTION-->
+    <section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>If you have any questions or suggestions reach out to us.</p>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email Address" required />
+    <textarea placeholder="Your Message..." required></textarea>
+    <button type="submit" class="btn-primary">Send Message</button>
+  </form>
+</section>
+
 
     <!-- FOOTER -->
     <footer>
