@@ -5,20 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Community Help Board</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <div class="logo">Community Help Board</div>
+        <div><img src="assets/images/logo.png" alt="logo" class="logo" /></div>
         <ul class="nav-links">
           <li><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
 
           <li><a href="#categories">Categories</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#create.html" class="btn-primary">Create Post</a></li>
+          <!-- <li><a href="dashboard/index.html" class="btn-secondary create">Create Post</a></li> -->
         </ul>
-        <button  class="btn-primary"><a href="dashboard/index.html"> Get Started</a></button>
+        <button class="btn-secondary">
+          <a href="dashboard/index.html"> Get Started</a>
+        </button>
       </nav>
     </header>
 
@@ -26,62 +38,89 @@
     <section class="hero">
       <div class="hero-content">
         <h1>
-          Welcome to the Community Help Board. <br>Connect. Help. Grow Together
+          Welcome to the Community Help Board. <br />Connect.
+          <span>Help.</span> Grow Together
         </h1>
         <p>Share, help, offer support, and stay connected.</p>
-        <a href="dashboard/index.html" class="btn-primary">Get Started</a>
+        <a href="dashboard/index.html" class="btn-secondary">Get Started</a>
+      </div>
+      <div>
+        <img
+          src="assets/images/hero-image.jpg"
+          alt="Community Help"
+          class="hero-image"
+        />
+      </div>
+    </section>
+    <!-- Help categories -->
+    <section class="services-section">
+      <div><h2>Categories</h2></div>
+      <div class="services-container">
+        <div class="service-card">
+          <div class="icon">🏡</div>
+          <h3>Home & Errands</h3>
+          <p>
+            Help with day-to-day tasks such as shopping, cleaning, small
+            repairs, or any chores around the home.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">💬</div>
+          <h3>Care & Support</h3>
+          <p>
+            Assistance for personal care needs — from babysitting to checking on
+            neighbors, emotional support, or simply lending a helping hand
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🧠</div>
+          <h3>Learning & Tech</h3>
+          <p>
+            Get help with schoolwork, tutoring, digital skills, device setup, or
+            solving basic tech problems.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">👍</div>
+          <h3>Community & Services</h3>
+          <p>
+            Community-driven tasks such as volunteering, event support, local
+            services, or offering professional help when needed.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- CATEGORY SECTION-->
-    <section id="categories" class="features">
-      <h2>Categories</h2>
-      <div class="feature-container">
-        <div class="feature-card">
-          <img src="/css/photos/food.jpg" alt="Food" />
-          <h3>Food</h3>
-          <p>Request or offer food items to support those in need</p>
+    <!-- ABOUT SECTION-->
+    <section id="about">
+      <h2>About the Project</h2>
+      <div class="about">
+        <div>
+          <img
+            src="assets/images/about-image.png"
+            alt="About Us"
+            class="about-image"
+          />
         </div>
-        <div class="feature-card">
-          <img src="/css/photos/clothes.png" alt="Clothing" />
-          <h3>Clothing</h3>
-          <p>Donate or request clothing for individuals or families.</p>
-        </div>
-        <div class="feature-card">
-          <img src="/css/photos/medicals.png" alt="Medical" />
-          <h3>Medical</h3>
-          <p>Seek or provide medical assistance and supplies.</p>
-        </div>
-        <div class="feature-card">
-          <img src="/css/photos/education.png" alt="Education" />
-          <h3>Education</h3>
-          <p>Find or help with educational resources and support.</p>
-          </div>
-          <div class="feature-card">
-          <img src="/css/photos/finance.png" alt="Financial" />
-          <h3>Financial</h3>
-          <p>Offer or request financial aid for various needs.</p>
-        </div>
-        <div class="feature-card">
-          <img src="css/photos/others.png" alt="Other" />
-          <h3>Other</h3>
-          <p>Post or ask for support in other ways</p>
+        <div>
+          <p>
+            The Community Notice Board is digital platfom for neighbours to
+            share offers and requests for support and help. Neighbours who have
+            needs like finances, shelter, medical conditions, feeding challenges
+            and several others are encouraged to post their needs on the
+            platform and those who also have offers to help in any way are also
+            encouraged to do like wise. Through this platform, we support and
+            bear each others burden.
+          </p>
+          <p>
+            our goal is to make it easier for community members to connect,
+            share resources, and support one another in times of need.
+          </p>
         </div>
       </div>
-    </section>
-
-    <!--  SEARCH + FILTER AREA-->
-    <section class="search-filter">
-      <input type="text" placeholder="Search posts..." class="search-bar" />
-      <select class="filter-dropdown">
-        <option value="">All Categories</option>
-        <option value="home and errands">Home and Errands</option>
-        <option value="care and support">Care and Support</option>
-        <option value="learning and tech">Learning and Tech</option>
-        <option value="Community and Services">Community and Services</option>
-        <option value="others">Others</option>
-      </select>
-      <button type="submit">Search</button>
     </section>
 
     <!-- POST PREVIEW / FEED-->
@@ -95,43 +134,26 @@
             Single mother in Ikorodu is seeking help with basic school materials
             for her kids.
           </p>
-          <p><strong>Category:</strong>Education</p>
+          <p><strong>Category:</strong> Learning & Tech</p>
           <p><small>Posted: Nov 10, 2025</small></p>
         </article>
 
         <article class="post-card">
-          Offer: Free Weekend Health Check
+          <h3>Offer: Free Weekend Health Check</h3>
           <p>
             Local nurse is offering free blood presure and sugar level tests
             this Saturday at 4pm.
           </p>
-          <p><strong>Category :</strong> Health</p>
+          <p><strong>Category :</strong> Care & Support</p>
           <p><small>Posted: Nov 9, 2025</small></p>
         </article>
       </div>
     </main>
 
-    <!-- ABOUT SECTION-->
-    <section id="about" class="about">
-      <h2>About the Project</h2>
-      <p>
-        The Community Notice Board is digital platfom for neighbours to share
-        offers and requests for support and help. Neighbours who have needs like
-        finances, shelter, medical conditions, feeding challenges and several
-        others are encouraged to post their needs on the platform and those who
-        also have offers to help in any way are also encouraged to do like wise.
-        Through this platform, we support and bear each others burden.
-      </p>
-      <p>
-        our goal is to make it easier for community members to connect, share
-        resources, and support one another in times of need.
-      </p>
-    </section>
-
     <!--A CALL TO ACTION-->
     <section class="cta">
       <h2>Ready to Make a Difference?</h2>
-      <a href="create.html" class="btn-primary">Post a REquest or Offer</a>
+      <a href="dashboard/index.html" class="btn-secondary">Get Involved</a>
     </section>
 
     <!-- FOOTER -->
