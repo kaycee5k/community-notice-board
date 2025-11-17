@@ -1,4 +1,3 @@
-/* GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +8,7 @@ body {
   background-color: #fff;
   color: #b2b7b9;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 body p {
   font-family: "Poppins", sans-serif;
@@ -56,6 +56,69 @@ h6 {
 .nav-links a:hover {
   color: #4fdcd4;
 }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  width: 30px;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: #103c2f;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+/* MOBILE NAV BEHAVIOR */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    padding: 1.5rem 0;
+  }
+
+  .navbar.active .nav-links {
+    display: flex;
+  }
+
+  .navbar.active .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .navbar.active .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar.active .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar.active .nav-links {
+    display: flex;
+  }
+}
+
 .btn-secondary {
   background-color: rgb(85, 196, 139);
   color: white;
@@ -101,13 +164,14 @@ h6 {
   align-items: center;
   text-align: center;
   padding: 4rem 2rem;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),  url(/css/photos/community1.png) ; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
   height: 100vh;
   color: #103c2f;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .hero-content h1 {
@@ -148,7 +212,30 @@ h6 {
 }
 .hero-image {
   height: 700px;
-  width: 100%;
+    width: 100%;
+  max-width: 800px;
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    text-align: center;
+  }
+
+  .hero-image {
+    max-width: 90%;
+    height: 300px;
+  }
 }
 
 .services-section {
@@ -296,6 +383,40 @@ h6 {
   font-weight: 400;
   font-family: "Poppins", sans-serif;
 }
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about img {
+    width: 100%;
+    height: 300px;
+  }
+}
+.sponsors-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.sponsors img {
+  width: 150px;
+  height: auto;
+  opacity: 0.8;
+}
+.sponsors {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;}
+
+/* .sponsor-logo img {
+  width: 100%;
+  height: auto;
+} */
+
 
 /* CTA SECTION */
 .cta {
