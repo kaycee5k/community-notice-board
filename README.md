@@ -9,10 +9,10 @@ Members can easily browse posts, filter them by category, and search for specifi
 ## 👥 Team Members
 | Name | Role | Responsibilities |
 |------|------|------------------|
-| **Kenechukwu Emmanuel Onyia** |  | |
-| **Ochu Chidiebere Ebubedike** | | |
-| **Amah Ifeanyi Sunday** |  |  |
-| **Chinenye Orakwue** |  | |
+| **Kenechukwu Emmanuel Onyia** | Project Lead & DashBoard js |  |
+| **Ochu Chidiebere Ebubedike** | Landing page CSS & Reserch | |
+| **Amah Ifeanyi Sunday** | DashBoard page Html & css |  |
+| **Chinenye Orakwue** | Landing page html & Reserch | |
 
 ---
 
