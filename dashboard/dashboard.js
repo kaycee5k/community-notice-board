@@ -43,15 +43,12 @@ function displayPosts(filter = "all", searchTerm = "") {
 
     postContainer.appendChild(card);
 
-    // OFFER HELP BUTTON — delete post + update stats
     const offerBtn = card.querySelector(".offer-help");
     offerBtn.addEventListener("click", () => {
       const index = posts.indexOf(post);
 
-      // Remove post
       posts.splice(index, 1);
 
-      // Update stats
       closedCount++;
       helpCount++;
 
@@ -60,7 +57,6 @@ function displayPosts(filter = "all", searchTerm = "") {
       localStorage.setItem("closedCount", closedCount);
       localStorage.setItem("helpCount", helpCount);
 
-      // Refresh UI
       displayPosts(filter, searchTerm);
     });
   });
@@ -133,5 +129,4 @@ postForm.addEventListener("submit", (e) => {
   displayPosts();
 });
 
-// Run at startup
 displayPosts();
