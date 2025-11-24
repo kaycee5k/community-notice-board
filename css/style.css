@@ -168,7 +168,7 @@ h6 {
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
-  height: 100vh;
+  /* height: 100vh; */
   color: #103c2f;
   flex-wrap: wrap;
   gap: 2rem;
@@ -210,9 +210,12 @@ h6 {
   font-family: "Poppins", sans-serif;
   text-transform: capitalize;
 }
+.hero-content .btn-secondary {
+  float: left;
+}
 .hero-image {
   height: 700px;
-    width: 100%;
+  width: 100%;
   max-width: 800px;
 }
 @media (max-width: 768px) {
@@ -410,13 +413,13 @@ h6 {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   justify-content: center;
   gap: 5rem;
-  align-items: center;}
+  align-items: center;
+}
 
 /* .sponsor-logo img {
   width: 100%;
   height: auto;
 } */
-
 
 /* CTA SECTION */
 .cta {
