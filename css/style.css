@@ -239,6 +239,12 @@ h6 {
     max-width: 90%;
     height: 300px;
   }
+
+}
+@media (max-width:768px) {
+  .get-started {
+    display: none;
+  }
 }
 
 .services-section {
