@@ -18,9 +18,7 @@ h3, p{
 }
 
 body {
-  /* background: #f9f9f9; */
   background-color: #f5fafc;
-  /* background-color: #232358; */
   color: #333;
   padding: 10px;
 }
@@ -43,10 +41,7 @@ body {
 }
 
 .search-bar input {
-  /* float: right; */
   padding: 6px 10px;
-  /* margin-top: 8px;
-    margin-right: 16px; */
   background: white;
   font-size: 16px;
   border: none;
@@ -63,7 +58,6 @@ body {
   font-weight: bold;
 }
 #requestBtn {
-  /* background-color: #5959a0; */
   background-color: #55c48b;
   color: white;
   padding: 0.6rem 1rem;
@@ -96,7 +90,7 @@ body {
   flex-wrap: wrap;
   gap: 40px;
   margin-top: 60px;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .stat-card {
@@ -104,18 +98,21 @@ body {
   border: 1px solid grey;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  /* background-color: #5959a0; */
-  /* background-color: #55c48b; */
   color: black;
   padding: 20px;
   cursor: pointer;
   font-weight: bold;
   line-height: 1.5;
-  width: 250px;
+  width: 370px;
   font-size: 20px;
+  transition: 0.3s;
 }
 .stat-card:hover{
   background-color: #55c48b;
+  color: white;
+}
+.stat-card:hover h3{
+  color: white;
 }
 
 .stat-card h3 {
@@ -143,7 +140,6 @@ body {
 
 
 .tab.active {
-  /* background: #007bff; */
   background: #4fdcd4;
   color: white;
 }
@@ -181,7 +177,6 @@ body {
 }
 .card h3 {
   margin-top: 0;
-  /* color: #004aad; */
   color: black;
   text-transform: capitalize;
   font-size: 20px;
@@ -193,8 +188,6 @@ body {
   border-radius: 20px;
   background: #ffdfdb;
   border: 1px solid #b75f64;
-  /* background: black; */
-  /* color: #007bff; */
   color: black;
   font-size: 0.75rem;
   margin-bottom: 8px;
@@ -202,7 +195,6 @@ body {
 }
 .offer-help {
   padding: 10px 15px;
-  /* background-color: #007bff; */
   background-color: #53c389;
   color: white;
   text-decoration: none;
