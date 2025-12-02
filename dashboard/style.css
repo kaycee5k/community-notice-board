@@ -37,6 +37,10 @@ body {
   border-radius: 5px;
 }
 
+.logo a{
+  text-decoration: none;
+  color: #103c2f;
+}
 #requestBtn {
   background-color: #5959a0;
   color: white;
@@ -49,6 +53,15 @@ body {
 }
 #requestBtn:hover {
   background-color: #454580;
+}
+@media (max-width: 768px){
+  .navbar {
+    display: block;
+  }
+  .logo, .search-bar, #requestBtn {
+    margin: 10px 0;
+  } 
+  
 }
 
 /* Stats section */
