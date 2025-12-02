@@ -37,7 +37,7 @@ function displayPosts(filter = "all", searchTerm = "") {
       <span class="category-tag">${post.categoryLabel}</span>
       <h3>${post.name}</h3>
       <p>${post.description}</p>
-      <small>Contact: ${post.contact}</small><br>
+      <small>Contact: ${post.contact}</small>
       <button class="offer-help">Offer Help</button>
     `;
 
