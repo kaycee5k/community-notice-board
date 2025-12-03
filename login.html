@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login / Sign Up - Community Help Board</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #e8f9e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .auth-container {
+      background: #fff;
+      width: 380px;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      color: #0b4d0b;
+    }
+    .tabs { display:flex; }
+    .tab {
+      flex:1;
+      text-align:center;
+      padding:10px 0;
+      cursor:pointer;
+      font-weight:600;
+      border-bottom:3px solid transparent;
+    }
+    .tab.active { border-color:#0b4d0b; color:#0b4d0b; }
+    form { display:none; margin-top:14px; }
+    form.active { display:block; }
+    label { display:block; font-size:14px; margin-top:10px; color:#294e29; }
+    input { width:100%; padding:10px; margin-top:6px; border-radius:6px; border:1px solid #cfe7cf; font-size:14px; }
+    .btn { width:100%; margin-top:14px; padding:11px; background:#0b4d0b; color:#fff; border:0; border-radius:6px; cursor:pointer; font-weight:600; }
+    .msg { margin-top:10px; font-size:14px; color:#b00020; min-height:18px; }
+    .small { margin-top:8px; text-align:center; font-size:13px; color:#2e6b2e; }
+    a.link { color:#0b4d0b; text-decoration:none; font-weight:600; }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="tabs">
+      <div id="tabLogin" class="tab active">Login</div>
+      <div id="tabSignup" class="tab">Sign Up</div>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" class="active" autocomplete="on">
+      <label for="loginEmail">Email</label>
+      <input id="loginEmail" name="email" type="email" required placeholder="you@example.com" />
+
+      <label for="loginPassword">Password</label>
+      <input id="loginPassword" name="password" type="password" required placeholder="Your password" />
+
+      <div id="loginMsg" class="msg" aria-live="polite"></div>
+      <button type="submit" class="btn">Login</button>
+      <div class="small">Don't have an account? <a href="#" id="gotoSignup" class="link">Create one</a></div>
+    </form>
+
+    <!-- SIGNUP FORM -->
+    <form id="signupForm" autocomplete="on">
+      <label for="signupName">Full name</label>
+      <input id="signupName" name="name" type="text" required placeholder="Full Name" />
+
+      <label for="signupEmail">Email</label>
+      <input id="signupEmail" name="email" type="email" required placeholder="you@example.com" />
+
+      <label for="signupPassword">Password</label>
+      <input id="signupPassword" name="password" type="password" required minlength="6" placeholder="Create a password" />
+
+      <div id="signupMsg" class="msg" aria-live="polite"></div>
+      <button type="submit" class="btn">Create Account</button>
+      <div class="small">Already have an account? <a href="#" id="gotoLogin" class="link">Login</a></div>
+    </form>
+  </div>
+
+  <!-- auth.js will handle registration/login -->
+  <script src="js/auth.js"></script>
+  <script>
+    // UI tab switching (keeps code local and simple)
+    const tabLogin = document.getElementById('tabLogin');
+    const tabSignup = document.getElementById('tabSignup');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const gotoSignup = document.getElementById('gotoSignup');
+    const gotoLogin = document.getElementById('gotoLogin');
+
+    function showLogin() {
+      tabLogin.classList.add('active');
+      tabSignup.classList.remove('active');
+      loginForm.classList.add('active');
+      signupForm.classList.remove('active');
+    }
+    function showSignup() {
+      tabSignup.classList.add('active');
+      tabLogin.classList.remove('active');
+      signupForm.classList.add('active');
+      loginForm.classList.remove('active');
+    }
+
+    tabLogin.addEventListener('click', showLogin);
+    tabSignup.addEventListener('click', showSignup);
+    gotoSignup.addEventListener('click', (e) => { e.preventDefault(); showSignup(); });
+    gotoLogin.addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
+
+    // form handling: attach handlers provided by auth.js
+    document.getElementById('signupForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value.trim();
+      const email = document.getElementById('signupEmail').value.trim().toLowerCase();
+      const password = document.getElementById('signupPassword').value;
+      const out = registerUser({ name, email, password }); // from auth.js
+      const msg = document.getElementById('signupMsg');
+      if (!out.ok) { msg.textContent = out.message; return; }
+      msg.style.color = 'green';
+      msg.textContent = 'Account created — redirecting...';
+      // small delay then redirect to dashboard
+      setTimeout(() => window.location.href = 'dashboard/index.html', 800);
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+      const password = document.getElementById('loginPassword').value;
+      const out = loginUser({ email, password }); // from auth.js
+      const msg = document.getElementById('loginMsg');
+      if (!out.ok) { msg.textContent = out.message; return; }
+      msg.style.color = 'green';
+      msg.textContent = 'Login successful — redirecting...';
+      setTimeout(() => window.location.href = 'dashboard/index.html', 500);
+    });
+  </script>
+</body>
+</html>
