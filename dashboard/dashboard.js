@@ -147,7 +147,7 @@ function handleFormSubmit(e) {
   const newPost = {
     ...formData,
     categoryLabel: getCategoryLabel(formData.category),
-    id: Date.now(), // Unique identifier
+    id: Date.now(), 
     timestamp: new Date().toISOString()
   };
 
@@ -156,6 +156,7 @@ function handleFormSubmit(e) {
   postForm.reset();
   postModal.style.display = "none";
   displayPosts();
+  showNotification('Request added successfully! 🎉', 'success');
 }
 
 // Display posts with filtering
@@ -171,7 +172,13 @@ function displayPosts() {
     return matchesCategory && matchesSearch;
   });
 
-  renderPosts(filtered);
+  // Sort: open requests first, then closed ones
+  const sorted = filtered.sort((a, b) => {
+    if (a.closed === b.closed) return 0;
+    return a.closed ? 1 : -1;
+  });
+
+  renderPosts(sorted);
   updateStats();
 }
 
@@ -183,17 +190,19 @@ function renderPosts(postsToRender) {
   }
 
   postContainer.innerHTML = postsToRender.map(post => `
-    <div class="card" data-id="${post.id}">
+    <div class="card ${post.closed ? 'closed-card' : ''}" data-id="${post.id}" title="${post.closed ? 'Closed' : ''}">
       <span class="category-tag">${post.categoryLabel}</span>
       <h3>${escapeHtml(post.name)}</h3>
       <p>${escapeHtml(post.description)}</p>
       <small>Contact: ${escapeHtml(post.contact)}</small><br>
-      <button class="offer-help" data-id="${post.id}">Offer Help</button>
+      <button class="offer-help ${post.closed ? 'disabled' : ''}" data-id="${post.id}" ${post.closed ? 'disabled' : ''}>
+        ${post.closed ? 'Closed' : 'Offer Help'}
+      </button>
     </div>
   `).join('');
   
   // Add event listeners to offer help buttons
-  postContainer.querySelectorAll('.offer-help').forEach(btn => {
+  postContainer.querySelectorAll('.offer-help:not(.disabled)').forEach(btn => {
     btn.addEventListener('click', handleOfferHelp);
   });
 }
@@ -201,16 +210,16 @@ function renderPosts(postsToRender) {
 // Handle offer help action
 function handleOfferHelp(e) {
   const postId = parseInt(e.target.dataset.id);
-  const postIndex = posts.findIndex(p => p.id === postId);
+  const post = posts.find(p => p.id === postId);
   
-  if (postIndex !== -1) {
-    if (confirm('Are you sure you want to mark this request as helped?')) {
-      posts.splice(postIndex, 1);
-      closedCount++;
-      helpCount++;
-      saveData();
-      displayPosts();
-    }
+  if (post && !post.closed) {
+    post.closed = true;
+    post.closedAt = new Date().toISOString();
+    closedCount++;
+    helpCount++;
+    saveData();
+    displayPosts();
+    showNotification('Thank you for your service! 👏', 'success');
   }
 }
 
@@ -234,5 +243,24 @@ function escapeHtml(text) {
   return text.replace(/[&<>"']/g, m => map[m]);
 }
 
-// Initialize the app
 init();
+
+// Notification system
+function showNotification(message, type = 'success') {
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.textContent = message;
+  
+  // Add to body
+  document.body.appendChild(notification);
+  
+  // Trigger animation
+  setTimeout(() => notification.classList.add('show'), 10);
+  
+  // Remove after 3 seconds
+  setTimeout(() => {
+    notification.classList.remove('show');
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
+} 
