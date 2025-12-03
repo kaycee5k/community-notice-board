@@ -165,6 +165,24 @@ body {
   margin-bottom: 8px;
   text-transform: capitalize;
 }
+.timestamp-category{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.timestamp {
+  color: #999;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
 
 .offer-help {
   padding: 10px 15px;
@@ -172,16 +190,53 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 4px;
-  margin-top: 10px;
   text-align: center;
   border: none;
   cursor: pointer;
   text-transform: capitalize;
   transition: transform 0.2s, background-color 0.2s;
+  flex: 1;
+  min-width: 100px;
 }
 
 .offer-help:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.edit-btn {
+  padding: 10px ;
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: transform 0.2s, background-color 0.2s;
+  flex: 1;
+  min-width: 80px;
+}
+
+.edit-btn:hover {
+  background-color: #ff8c00;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  padding: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: transform 0.2s, background-color 0.2s;
+  flex: 1;
+  min-width: 80px;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
   transform: scale(1.05);
 }
 
@@ -251,9 +306,7 @@ body {
   cursor: pointer;
 }
 
-/* ========================================= */
-/* NOTIFICATION STYLES */
-/* ========================================= */
+/* Notification Styles */
 
 .notification {
   position: fixed;
@@ -293,9 +346,8 @@ body {
   background: #3b82f6;
 }
 
-/* ========================================= */
-/* CLOSED CARD STYLES */
-/* ========================================= */
+
+/* Closed Card Styles */
 
 .closed-card {
   opacity: 0.7;
