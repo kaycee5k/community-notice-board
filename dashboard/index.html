@@ -5,11 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Community Notice Board</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+  </head><!-- ensure auth helper is loaded first -->
+<script src="../js/auth.js"></script>
+
+<script>
+  // Redirect to login.html if user is not logged in
+  // Adjust path if your login.html lives somewhere else
+  if (typeof requireAuth === 'function') {
+    requireAuth('../login.html'); // redirect if not authenticated
+  }
+  // Optionally show username on the page if you have an element for it
+  document.addEventListener('DOMContentLoaded', () => {
+    const user = getCurrentUser ? getCurrentUser() : null;
+    const greeting = document.getElementById('userGreeting');
+    if (greeting && user) greeting.textContent = 'Hello, ' + (user.name || 'User');
+  });
+</script>
+
+<!-- your existing dashboard script (make sure path is correct) -->
+<script src="dashboard.js"></script>
+
   <body>
     <header class="navbar">
       <div class="logo">
-        <h2> <a href="/index.html">Community Dashboard</a> </h2>
+        <h2><a href="/index.html">Community Dashboard</a></h2>
       </div>
       <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Search requests..." />
