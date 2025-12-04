@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <header class="navbar">
@@ -17,6 +21,12 @@
         <input type="text" id="searchInput" placeholder="Search requests..." />
         <i class="material-icons" style="font-size:25px">search</i>
         <button id="requestBtn">Request Help</button>
+      </div>
+      <div class="user-menu">
+        <span class="welcome-text">Welcome, <strong id="userName"></strong></span>
+        <button id="logoutBtn" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
       </div>
     </header>
 
@@ -81,6 +91,7 @@
       </div>
     </div>
 
+    <script src="../js/auth.js"></script>
     <script src="dashboard.js"></script>
   </body>
 </html>
