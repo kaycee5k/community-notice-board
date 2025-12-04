@@ -4,6 +4,7 @@ const CATEGORIES = [
   { id: "care", label: "Care & Support" },
   { id: "learning", label: "Learning & Tech" },
   { id: "community", label: "Community & Services" },
+  { id: "washing", label: "Washing and Settings" },
 ];
 
 const STORAGE_KEYS = {
@@ -243,7 +244,7 @@ function displayPosts() {
 // Render posts to DOM
 function renderPosts(postsToRender) {
   if (postsToRender.length === 0) {
-    postContainer.innerHTML = "<p style='text-align:center;'>No posts yet.</p>";
+    postContainer.innerHTML = "<p style='text-align:center; font-weight: bold;'>No posts yet.</p>";
     return;
   }
 
