@@ -6,26 +6,11 @@
     <title>Community Notice Board</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
-  </head><!-- ensure auth helper is loaded first -->
-<script src="../js/auth.js"></script>
-
-<script>
-  // Redirect to login.html if user is not logged in
-  // Adjust path if your login.html lives somewhere else
-  if (typeof requireAuth === 'function') {
-    requireAuth('../login.html'); // redirect if not authenticated
-  }
-  // Optionally show username on the page if you have an element for it
-  document.addEventListener('DOMContentLoaded', () => {
-    const user = getCurrentUser ? getCurrentUser() : null;
-    const greeting = document.getElementById('userGreeting');
-    if (greeting && user) greeting.textContent = 'Hello, ' + (user.name || 'User');
-  });
-</script>
-
-<!-- your existing dashboard script (make sure path is correct) -->
-<script src="dashboard.js"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
   <body>
     <header class="navbar">
       <div class="logo">
@@ -34,6 +19,12 @@
       <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Search requests..." />
         <button id="requestBtn">Request Help</button>
+      </div>
+      <div class="user-menu">
+        <span class="welcome-text">Welcome, <strong id="userName"></strong></span>
+        <button id="logoutBtn" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
       </div>
     </header>
 
@@ -98,6 +89,7 @@
       </div>
     </div>
 
+    <script src="../js/auth.js"></script>
     <script src="dashboard.js"></script>
   </body>
 </html>

@@ -18,17 +18,22 @@ body {
   align-items: center;
   background: white;
   color: #333;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .navbar h2 {
   font-size: 1.8rem;
 }
 
+.search-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .search-bar input {
-  /* float: right; */
   padding: 6px 10px;
-  /* margin-top: 8px;
-    margin-right: 16px; */
   background: white;
   font-size: 16px;
   border: none;
@@ -41,6 +46,7 @@ body {
   text-decoration: none;
   color: #103c2f;
 }
+
 #requestBtn {
   background-color: #5959a0;
   color: white;
@@ -51,9 +57,45 @@ body {
   font-weight: 500;
   font-size: 16px;
 }
+
 #requestBtn:hover {
   background-color: #454580;
 }
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.welcome-text {
+  font-size: 14px;
+  color: #333;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+.logout-btn i {
+  font-size: 14px;
+}
+
 @media (max-width: 768px){
   .navbar {
     display: block;
@@ -61,13 +103,10 @@ body {
   .logo, .search-bar, #requestBtn {
     margin: 10px 0;
   } 
-  
 }
 
 /* Stats section */
 .stats {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
@@ -125,6 +164,7 @@ body {
   gap: 15px;
   justify-content: center;
 }
+
 @media (min-width: 1200px) {
   .card-container {
     grid-template-columns: repeat(4, 1fr);
@@ -138,7 +178,9 @@ body {
   padding: 20px;
   height: auto;
   width: 334px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .card p {
   margin: 10px 0;
   color: #666;
@@ -146,6 +188,7 @@ body {
   font-size: 18px;
   text-transform: capitalize;
 }
+
 .card h3 {
   margin-top: 0;
   color: #004aad;
@@ -153,6 +196,7 @@ body {
   font-size: 20px;
   font-weight: 600;
 }
+
 .card .category-tag {
   display: inline-block;
   padding: 4px 8px;
@@ -163,26 +207,87 @@ body {
   margin-bottom: 8px;
   text-transform: capitalize;
 }
+
+.timestamp {
+  color: #999;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
 .offer-help {
   padding: 10px 15px;
   background-color: #007bff;
   color: white;
   text-decoration: none;
   border-radius: 4px;
-  margin-top: 10px;
   text-align: center;
   border: none;
   cursor: pointer;
   text-transform: capitalize;
+  transition: transform 0.2s, background-color 0.2s;
+  flex: 1;
+  min-width: 100px;
 }
+
+.offer-help:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.edit-btn {
+  padding: 10px 15px;
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: transform 0.2s, background-color 0.2s;
+  flex: 1;
+  min-width: 80px;
+}
+
+.edit-btn:hover {
+  background-color: #ff8c00;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  padding: 10px 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: transform 0.2s, background-color 0.2s;
+  flex: 1;
+  min-width: 80px;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
 .contact-info {
   margin-top: 10px;
   color: #333;
   font-size: 16px;
   display: block;
 }
+
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
 }
 
 /* Modal */
@@ -196,6 +301,7 @@ body {
   background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
 .modal-content {
@@ -236,4 +342,97 @@ body {
   top: 10px;
   font-size: 20px;
   cursor: pointer;
+}
+
+
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  background: #10b981;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.3s ease;
+  min-width: 250px;
+  max-width: 400px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.notification.success {
+  background: #10b981;
+}
+
+.notification.error {
+  background: #ef4444;
+}
+
+.notification.info {
+  background: #3b82f6;
+}
+
+
+
+.closed-card {
+  opacity: 0.7;
+  position: relative;
+  background: #f9fafb !important;
+  border: 2px dashed #d1d5db !important;
+}
+
+.closed-card:hover::after {
+  content: 'CLOSED';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 2px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.closed-card:hover {
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Disabled Button Styles */
+.offer-help.disabled {
+  background: #9ca3af !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.offer-help.disabled:hover {
+  background: #9ca3af !important;
+  transform: none !important;
+}
+
+/* Responsive for notifications */
+@media (max-width: 768px) {
+  .notification {
+    right: 10px;
+    left: 10px;
+    top: 10px;
+  }
 }
