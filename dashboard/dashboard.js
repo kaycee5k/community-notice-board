@@ -21,7 +21,7 @@ function displayPosts(filter = "all", searchTerm = "") {
       (filter === "all" || post.category === filter) &&
       (post.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         post.description.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  ); 
 
   if (filtered.length === 0) {
     postContainer.innerHTML =
