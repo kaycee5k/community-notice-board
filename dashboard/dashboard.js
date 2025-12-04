@@ -244,7 +244,7 @@ function displayPosts() {
 // Render posts to DOM
 function renderPosts(postsToRender) {
   if (postsToRender.length === 0) {
-    postContainer.innerHTML = "<p style='text-align:center; font-weight: bold;'>No posts yet.</p>";
+    postContainer.innerHTML = "<div class='post'><img class='image' src='../assets/images/post.png' style='' /><p style=''>No posts yet.</p></div>";
     return;
   }
 
