@@ -1,12 +1,24 @@
+@font-face {
+    font-family: BadScript;
+    src: url("./assets/font/BadScript-Regular.ttf");
+}
+@font-face {
+    font-family: Helvetica;
+    src: url("./assets/font/Helvetica.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+h3, p{
+  font-family: Helvetica;
+}
 
 body {
-  background: #f9f9f9;
+  background-color: #f5fafc;
   color: #333;
   padding: 10px;
 }
@@ -18,12 +30,16 @@ body {
   align-items: center;
   background: white;
   color: #333;
+  background-color: #f5fafc;
+}
+.logo img{
+  width: 300px;
   flex-wrap: wrap;
   gap: 15px;
 }
 
 .navbar h2 {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
 }
 
 .search-bar {
@@ -45,10 +61,13 @@ body {
 .logo a{
   text-decoration: none;
   color: #103c2f;
+  /* color: white; */
+  font-family: BadScript;
+  font-weight: bold;
 }
 
 #requestBtn {
-  background-color: #5959a0;
+  background-color: #55c48b;
   color: white;
   padding: 0.6rem 1rem;
   border: none;
@@ -56,6 +75,8 @@ body {
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
+  font-family: Helvetica;
+  font-weight: bold;
 }
 
 #requestBtn:hover {
@@ -116,19 +137,28 @@ body {
 
 .stat-card {
   border-radius: 10px;
+  border: 1px solid grey;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  background-color: #5959a0;
-  color: white;
+  color: black;
   padding: 20px;
   cursor: pointer;
   font-weight: bold;
-  width: 250px;
+  line-height: 1.5;
+  width: 370px;
   font-size: 20px;
+  transition: 0.3s;
+}
+.stat-card:hover{
+  background-color: #55c48b;
+  color: white;
+}
+.stat-card:hover h3{
+  color: white;
 }
 
 .stat-card h3 {
-  color: white;
+  color: black;
 }
 
 /* Categories */
@@ -150,8 +180,9 @@ body {
   font-size: 18px;
 }
 
+
 .tab.active {
-  background: #007bff;
+  background: #4fdcd4;
   color: white;
 }
 
@@ -165,6 +196,7 @@ body {
   justify-content: center;
 }
 
+
 @media (min-width: 1200px) {
   .card-container {
     grid-template-columns: repeat(4, 1fr);
@@ -172,6 +204,7 @@ body {
 }
 
 .card {
+  /* display: flex; */
   background: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -191,7 +224,7 @@ body {
 
 .card h3 {
   margin-top: 0;
-  color: #004aad;
+  color: black;
   text-transform: capitalize;
   font-size: 20px;
   font-weight: 600;
@@ -199,10 +232,11 @@ body {
 
 .card .category-tag {
   display: inline-block;
-  padding: 4px 8px;
-  border-radius: 5px;
-  background: #87c0fdad;
-  color: #007bff;
+  padding: 10px 8px;
+  border-radius: 20px;
+  background: #ffdfdb;
+  border: 1px solid #b75f64;
+  color: black;
   font-size: 0.75rem;
   margin-bottom: 8px;
   text-transform: capitalize;
@@ -224,7 +258,7 @@ body {
 
 .offer-help {
   padding: 10px 15px;
-  background-color: #007bff;
+  background-color: #53c389;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -343,6 +377,12 @@ body {
   font-size: 20px;
   cursor: pointer;
 }
+<<<<<<< HEAD
+.material-icons{
+  position: relative;
+  top: 5px;
+}
+=======
 
 
 
@@ -436,3 +476,4 @@ body {
     top: 10px;
   }
 }
+>>>>>>> main
